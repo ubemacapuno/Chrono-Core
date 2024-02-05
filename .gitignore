@@ -1,0 +1,47 @@
+# General
+*.log*
+*.local
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# IDE/Editor directories
+.idea/
+.vscode/
+*.vscode/*
+!.vscode/extensions.json
+
+# chrono-core-server specific
+/chrono-core-server/node_modules
+/chrono-core-server/npm-debug.log*
+/chrono-core-server/.env
+/chrono-core-server/.dist
+
+# chrono-core-frontend specific
+/chrono-core-frontend/logs
+/chrono-core-frontend/*.log
+/chrono-core-frontend/npm-debug.log*
+/chrono-core-frontend/yarn-debug.log*
+/chrono-core-frontend/yarn-error.log*
+/chrono-core-frontend/pnpm-debug.log*
+/chrono-core-frontend/lerna-debug.log*
+/chrono-core-frontend/node_modules
+/chrono-core-frontend/dist
+/chrono-core-frontend/dist-ssr
+/chrono-core-frontend/.env
+/chrono-core-frontend/.env.*
+
+# chrono-core-desktop specific
+/chrono-core-desktop/venv/
+/chrono-core-desktop/__pycache__/
+/chrono-core-desktop/*.pyc
+/chrono-core-desktop/.env
