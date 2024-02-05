@@ -50,13 +50,12 @@ def get_ram_info():
     w = wmi.WMI() # use wmi to get RAM speed info
     ram_speeds = [memory.Speed for memory in w.Win32_PhysicalMemory()]
     
-    # Return all RAM information in a single object
     return {
-        "total": ram_info.total / (1024 ** 3),  # Convert bytes to GB
-        "used": ram_info.used / (1024 ** 3),    # Convert bytes to GB
-        "free": ram_info.free / (1024 ** 3),    # Convert bytes to GB
+        "total": ram_info.total / (1024 ** 3),  
+        "used": ram_info.used / (1024 ** 3),    
+        "free": ram_info.free / (1024 ** 3),    
         "percent": ram_info.percent,
-        "speeds": ram_speeds  # List of RAM speeds in MHz
+        "speeds": ram_speeds  
     }
 
 # Function to send data to the server via WebSocket
