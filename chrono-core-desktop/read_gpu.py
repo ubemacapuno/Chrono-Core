@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 # Now access WS_URL
 ws_url = os.getenv('WS_URL', 'ws://localhost:3000')
-print(f"Attempting to connect to WebSocket server at: {ws_url}")
+print(f"Attempting to connect to WebSocket server.")
 
 # Function to get GPU information
 def get_gpu_info():
@@ -97,7 +97,12 @@ if __name__ == "__main__":
             cpu_data = get_cpu_info()
             ram_data = get_ram_info()
 
-            ws = send_data(ws, {"cpu": cpu_data, "gpu": gpu_data, "ram": ram_data})
+            data_to_send = {"cpu": cpu_data, "gpu": gpu_data, "ram": ram_data}
+
+            # Log the data_to_send using logging.info()
+            logging.info(f"Sending data: {data_to_send}")
+
+            ws = send_data(ws, data_to_send)
 
             if ws is None:
                 ws = create_connection(ws_url)
