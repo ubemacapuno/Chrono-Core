@@ -9,6 +9,9 @@ import wmi
 from dotenv import load_dotenv
 
 load_dotenv()
+# Now access WS_URL
+ws_url = os.getenv('WS_URL', 'ws://localhost:3000')
+print(f"Attempting to connect to WebSocket server at: {ws_url}")
 
 # Function to get GPU information
 def get_gpu_info():
@@ -86,7 +89,6 @@ def create_connection(ws_url):
 if __name__ == "__main__":
     # Create webSocket connection
     logging.basicConfig(level=logging.INFO) 
-    ws_url = os.getenv('WS_URL', 'ws://localhost:3000')
     ws = create_connection(ws_url)
 
     while ws: 
